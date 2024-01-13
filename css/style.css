@@ -489,6 +489,7 @@ section {
   border-radius: 50%;
   transition: 0.5s;
   border: 1px solid #149ddd;
+  margin-top: 5px;
 }
 
 .services .icon ion-icon {
@@ -498,6 +499,7 @@ section {
 }
 
 .services .icon-box:hover .icon {
+  margin-top: 10px;
   background: #fff;
 }
 
@@ -508,8 +510,6 @@ section {
 .services .title {
   margin-left: 80px;
   font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
 }
 
 .services .title a {
