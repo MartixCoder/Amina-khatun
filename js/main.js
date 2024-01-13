@@ -19,6 +19,10 @@
       }
     }
   };
+  const onscroll = (el, listener) => {
+    el.addEventListener("scroll", listener);
+  };
+
   var typed = new Typed(".typed", {
     strings: ["Desinger", "Developer", "Freelancer", "Photographer"],
     typeSpeed: 100,
@@ -40,6 +44,7 @@
       },
     });
   }
+
   let backtotop = select(".back-to-top");
   if (backtotop) {
     const toggleBacktotop = () => {
@@ -50,7 +55,7 @@
       }
     };
     window.addEventListener("load", toggleBacktotop);
-    window.onscroll = () => (document, toggleBacktotop());
+    onscroll(document, toggleBacktotop);
   }
 
   on("click", ".mobile-nav-toggle", function (e) {
@@ -58,6 +63,7 @@
     this.classList.toggle("bx-menu");
     this.classList.toggle("bx-x");
   });
+
   on(
     "click",
     ".scrollto",
@@ -69,8 +75,8 @@
         if (body.classList.contains("mobile-nav-active")) {
           body.classList.remove("mobile-nav-active");
           let navbarToggle = select(".mobile-nav-toggle");
-          navbarToggle.classList.toggle("bi-list");
-          navbarToggle.classList.toggle("bi-x");
+          navbarToggle.classList.toggle("bx-menu");
+          navbarToggle.classList.toggle("bx-x");
         }
         scrollto(this.hash);
       }
